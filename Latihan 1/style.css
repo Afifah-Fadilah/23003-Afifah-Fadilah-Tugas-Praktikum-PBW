@@ -1,0 +1,248 @@
+/*mendefinisikan variabel CSS global, untuk di panggil*/
+:root {
+    --primary:rgb(146, 0, 70); /*warna utama*/
+    --secondary: rgb(237,217, 217); /*warna background, digunakan di nav dan kelas hobi*/
+    --text_p: #555; /*warna untuk teks paragraf*/
+
+  }
+
+html { 
+    scroll-behavior: smooth; /* Membuat efek scroll yang halus */
+}
+
+body {
+    margin: 0; /* Menghilangkan margin default pada body */
+    font-family: Helvetica, sans-serif; /* Mengatur font utama */
+    background-color: #f5f5f5; /* Mengatur warna background web */
+
+}
+
+/* Navbar */
+.nav {
+    display: flex; /* Mengatur navbar dalam bentuk flexbox agar sebaris */
+    align-items: center; /* agar teks berada di tengah nav */
+    padding: 15px 25px; /* mengatur ukuran ketebalan nav */
+    background-color: var(--secondary); /* memanggil warna secondary untuk bg di nav */
+    position: fixed; /* Membuat navbar tetap di atas walaupun halaman di scrol ke bawah */
+    width: 100%; /* Agar navbar menyesuaikan lebar layar */
+    z-index: 1000; /* Pastikan navbar selalu di depan */
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2); /* Tambahkan shadow */
+}
+
+/* Bungkus link dengan div agar bisa rata kanan */
+.nav-links {
+    display: flex; /* Menyusun link secara horizontal */
+    margin-left: auto; /* Mendorong teks ke kanan */
+    padding-right: 45px; /* Memberikan jarak dari tepi kanan */
+    font-weight: 550; /* Memberikan ketebalan pada teks*/
+}
+
+.nav-link { 
+    color: var(--primary); /* Memanggil warna untuk dipakai di teks navlink */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks navlink */
+    margin: 0 15px; /* Memberikan jarak antar teks navlink */
+}
+
+.nav-link:hover{
+    text-decoration: underline; /* Menambahkan garis bawah saat hover(mouse di arahkan pada navlink) */
+}
+
+/* Mengatur logo yang berada di tepi kanan nav(bagian apipah) */
+.logo {
+    font-size: 24px; /* Mengatur ukuran font */
+    font-weight: bold; /* Mengatur ketebalan font*/
+    color: var(--primary); /* Mengambil warna primary untuk logo */
+    font-style: italic; /* Mengatur font agar italic */
+    text-shadow: 2px 3px 4px rgb(255, 255, 255); /* Tambahkan shadow pada text 'Apipah'*/
+
+}
+
+/* Mengatur logo yang berada di tepi kanan nav(bagian web) */
+.logo span {
+    font-style: italic; /* Mengatur font agar italic */
+    color: rgb(255, 255, 255); /* Mengatur warna pada teks */
+    padding: 5px; /* Mengatur jarak antar logo (bagian apipah dan web) */
+    text-shadow: 2px 3px 8px var(--primary); /* Tambahkan shadow untuk text 'Web' */
+}
+
+/* Bagian Profil */
+.profile {
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    justify-content: space-between; /* Menyusun elemen di kiri & kanan */
+    align-items: center; /* Menengahkan elemen secara vertikal agar di bagian tengah*/
+    padding: 100px; /* Mengatur kelas profile untuk berada di tengah dari sisi kiri dan kanan*/
+    height: 75vh; /* Mengatur tinggi section 75% dari viewport */
+}
+
+/* Bagian Profil (text paragraf) */
+.bio {
+    color: var(--text_p); /* Mengambil warna dari var text_p untuk memberikan warna paragraf */
+    font-size: 18px; /* Mengatur ukuran teks paragraf */
+}
+
+/* Bagian Profil (text paragraf paling akhir) */
+.bio p:last-child {
+    font-weight: bold; /*Mengatur ketebalan font*/
+    font-size: 20px; /*Mengatur ukuran font*/
+    font-family: Arial; /*Mengatur jenis font yaitu menggunakan arial*/
+    margin-top: 30px; /*Mengatur jarak atas teks*/
+    color: rgb(237, 104, 170); /* Memberikan Warna pink */
+}
+
+
+.bio p {
+    line-height: 0.9; /* Mengatur spasi antar baris */
+    font-size: 17px; /* Mengatur ukuran font */
+    font-family: "Poppins"; /* Mengatur jenis font yaitu menggunakan poppins */
+    color: var(--text_p); /* Memanggil warna teks yaitu berwarna hitam keabu-abuan */
+}
+
+
+.typing-text {
+    font-size: 30px; /* Mengatur ukuran font agar lebih besar */
+    color: var(--primary); /* Mengambil var warna primary untuk memberikan warna font */
+    font-weight: bold; /* Mengatur ketebalan font */
+    white-space: nowrap; /* Mencegah teks agar tidak pindah baris */
+    overflow: hidden; /* Menyembunyikan teks yang belum muncul */
+    border-right: 2px solid rgb(146, 0, 70); /* Simulasi kursor */
+    width: 0; /* teks berjalan mulai dari nol (awal) */
+    animation: typing 6s steps(30, end) infinite, blink 0.7s infinite; /*Mengatur kecepatan animasi mengetik dan lainnya */
+}
+
+/* Animasi mengetik */
+@keyframes typing {     
+    0% {
+        width: 0;  /* Awal tidak terlihat */
+    }
+    50% {
+        width: 100%;  /* Text muncul sepenuhnya*/
+    }
+    100% {
+        width: 0; /* Text kembali tidak terlihat */
+    }
+}
+
+/* Animasi kursor berkedip */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Hilangkan kursor sementara */
+    }
+}
+
+/* Gambar Profil */
+.photo img {
+    width: 500px; /* Mengatur lebar gambar */
+    height: auto; /* Menyesuaikan tinggi secara proporsional */
+    margin-bottom: 15%; /* Mengatur jarak bawah */
+}
+
+
+/* Hobby Section */
+.hobbies {
+    text-align: center; /* Pusatkan heading teks agar berada di tengah */
+    padding: 40px 5px; /* menyesuaikan jarak dari bagian atas */
+    height: 85vh; /* Biar berada di layar kedua */
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    flex-direction: column; /* Menyusun elemen dalam kolom */
+    align-items: center; /* Mengatur kolom agar berada di tengah */
+    }
+
+/* Hobby Section (teks judul) */
+.hobbies h1{
+    padding-top: 50px; /* Mengatur jarak dari atas */
+    font-size: 30px; /* Mengatur ukuran font */
+    color: var(--primary); /* Mengambil var warna utama, untuk digunakan di teks judul */
+}
+
+/* Hobby Section (teks paragraf dibawah judul) */
+.hobbies p { 
+    font-family: "poppin"; /* Mengatur jenis font yang digunakan yaitu poppin */
+    font-size: large; /* Mengatur ukuran menjadi large */
+    margin-bottom: 0px; /* Mengatur jarak teks dengan bawahnya */
+    color: var(--text_p); /* Memanggil var warna teks paragraf */
+}
+
+.hobby-list {
+    background: var(--secondary); /* Memanggil var warna untuk memberikan warana pada kotak */
+    margin: 35px; /* Mengatur jarak antar elemen */
+    width: 80%; /* Lebar 80% dari parent */
+    max-width: 800px; /* Mengatur lebar maksimal kotak */
+    padding: 50px; /* Mengatur jarak elemen kolom dengan kotak */
+    border-radius: 10px; /* Membulatkan sudut */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Membuat bayangan untuk elemen kotak */
+    display: flex; /* Menggunakan flexbox */
+    transition: transform 0.3s ease-in-out; /* Animasi hover agar lebih halus */
+}
+
+.hobby-list:hover {
+    transform: scale(1.05); /* Perbesar saat hover */
+}
+
+.hobby-list img {
+    width: 120px; /* mengatur lebar gambar yang terletak pada elemen kotak */
+}
+
+/* judul daftar hobi */
+.hobby-list h3 { 
+    margin: 0; /* menyesuaikan jarak judul dengan yang lain */
+    padding-top: 10px; /* menyesuaikan jarak vertikal */
+    color: var(--primary); /* memanggil var warna primari untuk memberikan warna pada jenis hobi */
+}
+
+/* teks paragraf hobi */
+.hobby-list p { 
+    margin-top: 5px; /* mengatur jarak atas teks */
+    color: var(--text_p); /* memanggil var warna untuk memberikan warna pada teks paragraf */
+    font-size: 16px; /* mengatur ukuran teks */
+
+}
+
+.hobby p {
+    margin: 10px; /* mengatur jarak teks paragraf*/
+}
+
+/* contact section */
+.contact {
+    text-align: center; /* mengatur agar berada di tengah layar*/
+    padding: 50px 20px; /* mengatur posisi / jarak kelas kontak*/
+    background: rgb(241, 239, 239); /* mengatur warna latar belakang kelas kontak*/
+}
+
+.contact h1 { /* contact section (judul)*/
+    font-size: 30px; /* mengatur ukuran teks judul*/
+    color: var(--primary); /* mengambil var warna untuk judul*/
+}
+
+.contact p { /* contact section (paragraf)*/
+    font-size: large;
+    color: var(--text_p); /* mengambil var warna untuk paragraf */
+    font-family: "poppin"; /* mengatur jenis font yang digunakan */
+}
+
+.social-links { /* bagian kontak(ig, linkedin, github) */ 
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    justify-content: center; /* Mengatur tata letak agar berada di tengah */
+    gap: 40px; /* Mengatur jarak antar link sosial media */
+    margin-top: 20px; /* Mengatur tata letak agar berada di tengah */
+}
+
+.social-links a {
+    text-decoration: none; /* menghapus garis bawah pada bagian teks link */
+    color: var(--primary); /* Mengambil var warna primary untuk memberi warna teks sosial media */
+    font-size: 1.2rem; /* Mengatur ukuran teks */
+    font-weight: bold; /* Mengatur ketebalan teks */
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    flex-direction: column; /* Membuat kolom untuk gambar dan teks judul sosial media */
+    align-items: center; /* Mengatur tata letak item seperti gambar dan judul agar berada di tengah */
+    transition: transform 0.3s ease; /* Membuat animasi hover lebih smooth */
+}
+
+.social-links a:hover {
+    transform: scale(1.1); /* Membuat animasi hover agar gambar membesar ketika kursor diarahkan */
+}
+
+.social-links img { /* element img dalam social-links */
+    margin-bottom: 15px; /* Memberikan jarak 15px ke bawah dari setiap gambar */
+    width: 50px; /* Mengatur lebar gambar menjadi 50px */
+    height: 50px; /* Mengatur tinggi gambar menjadi 50px */
+}
