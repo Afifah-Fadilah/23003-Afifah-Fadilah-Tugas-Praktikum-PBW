@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 Form dan Tabel</title>
+
+    <style>
+
+        /* Menengahkan div utama di tengah vertikal, tapi tetap kiri */
+        .wrapper {
+            margin-top: 100px; /*Memberikan jarak antara card form penjualan dengan batas atas web*/
+            margin-left: 20px; /*Memberikan jarak antara card form & table penjualan dengan batas kiri layar*/
+        }
+
+        /*mengatur tampilan untuk seluruh kode di html*/
+        html {
+            background-color: rgb(235, 235, 235); /*merubah background color dari web*/ 
+            font-family: Arial; /*Menggunakan font arial untuk keseluruhan font yang ada di dalam web*/
+        }
+
+         /* Style untuk card (kotak putih tempat form & table berada) */
+        .card {
+            background-color: white;  /* Memberikan backround color berwarna putih) */
+            padding: 25px; /* Memberikan ukuran card agar lebih besar tidak terlalu dekat dengan input form maupun table */
+            width: 25rem; /* Memberikan ukuran yang berada dalam card tidak terlalu lebar*/
+            box-shadow: 0px 0px 4px rgb(187, 187, 187); /* Memberikan bayangan untuk card */
+            border-radius: 10px; /* Memberikan bentuk lebih bulat, tidak memiliki siku tajam */
+            transition: transform 0.3s ease-in-out; /* Animasi tetap aktif baik saat hover maupun saat dilepas */
+        }
+
+        /* style untuk memberikan animasi saat mouse di arahkan ke kelas card */
+        .card:hover {
+            transform: scale(1.02); /* Membesarkan card sebesar 5% */ 
+        }
+
+        /* style untuk menyesuaikan header tulisan form maupun table */
+        h2 { 
+            margin-top: 0px; /* mengisialkan jarak atas 0 agar tidak terlalu jauh dengan card*/
+            text-align: center; /* teks berada di tengah card */
+        }
+
+        /* style untuk memberikan tampilan font lebih tebal di bagian botton form */
+        button {
+            font-weight: bold;
+        }
+
+        /* style untuk mengatur form_group yang berisikan label maupun input */
+        .form_group {
+            margin-bottom: 0.7rem; /* memberikan jarak antar label */
+            display: flex; /* memberikan tampilan yang dapat diatur */
+            flex-direction: column; /* disini saya mengatur nya menjadi kolom, jadi antara label dan input itu tampilannya ke bawah */
+            font-weight: bold; /* memberikan tampilan font yang lebih tebal */
+        }
+
+        /* memberikan jarak antar label dengan input */
+        label {
+            padding-bottom: 4px;
+        }
+
+        /* style untuk kotak inputan dalam form */
+        input {
+            padding: 4px; /* merubah ukuran ketebalan dari kotak input */
+            border: 1px solid rgb(211, 211, 211); /* Warna garis input abu muda */
+            border-radius: 3px; /* memberikan sisi label lebih melengkung, tidak kaku */
+            outline: none; /* Hilangkan garis default ketika label input di klik */
+        }
+
+        /* style untuk merubah outline yang tadi nya hitam menjadi berwarna ketika kotak input di klik */
+        input:focus {
+            border: 1px solid rgb(255, 43, 93);
+        }
+
+        /* style ketika mouse di arahkan ke kotak inputan dalam form, maka akan berwarna*/
+        input:hover {
+            border: 1px solid rgb(255, 43, 93); /* Warna garis input abu muda */
+        }
+
+        /* style untuk button tambahkan dibagian form  */
+        button {
+            margin-top: 5px; /* memberikan jarak antar button dengan kotak input diatas nya*/
+            background-color: rgb(255, 43, 93); /* memberikan warna pada button */
+            color: white; /* memberikan warna putih pada teks  */
+            border: none; /* menghilangkan border pada button  */
+            padding: 6px; /* memberikan ukuran agar lebih lebar pada button  */
+            border-radius: 5px; /* memberikan sisi melengkung pada button  */
+            cursor: pointer; /* mengubah cursor menjadi pointer ketika diarahkan pada button  */
+            width: 25rem; /* memberikan ukuran panjang dari button  */
+        }
+
+        /* style untuk button ketika cursor diarahkan pada button maka warna akan berubah  */
+        button:hover {
+            background-color: rgb(255, 200, 200);
+        }
+
+        /* style untuk bagian kelas sales-table*/
+        .sales_table {
+            margin: 20px; /* memberikan jarak antar kelas sales table dengan kelas diatasnya yaitu kelas container */
+            margin-left: 0px; /* setting default agar mengikuti style di wrapper*/
+        }
+
+        /* style untuk bagian tiap table*/
+        table {
+            width: 100%; /* ukuran agar maks dengan ukuran card*/
+            border-collapse: collapse; /* mengubah style garis agar lebih rapi dan jelas*/
+            
+        }
+
+        /* style untuk bagian thead*/
+        thead { 
+            font-weight: bold; /* memberikan ukuran table yang lebih tebal*/
+            background-color: rgb(255, 43, 93); /* memberikan warna bg color table head*/
+            color: white; /* memberikan warna putih pada teks di thead*/
+        }
+
+        /* style untuk bagian isi table*/
+        th, td {
+            border: 1px solid rgb(203, 203, 203); /* memberikan warna garis table*/
+            padding: 5px; /* memberikan jarak antar kolom table*/
+            text-align: center; /* memberikan teks dalam table berada di tengah*/
+        }
+
+        /* style untuk bagian table footer*/
+        tfoot {
+            font-weight: bold; /* memberikan ukuran table yang lebih tebal*/
+            background-color: rgb(238, 238, 238); /* memberikan warna garis table*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper"> <!--menghubungkan kelas container (form penjualan) dengan kelas sales-table(table penjualan)-->
+        <div class="container"> <!--membungkus kelas yang berada di dalam form penjualan-->
+            <div class="card"> <!--kelas form card untuk style dan memberikan kotak di dalam form-->
+                <h2>Form Penjualan</h2> 
+                <form action="" method="post"> <!--post artinya mengirim inputan ke backend nantinya-->
+                    <div class="form_group"> <!--memberikan kelas yang sama pada ketiga nya agar memudahkan styling-->
+                        <label for=""> Produk</label> <!--judul label produk-->
+                        <input type="text"> <!--inputan yang dapat diinput berupa teks-->
+                    </div>
+                    <div class="form_group">
+                        <label for=""> Jumlah</label>
+                        <input type="number"> <!--inputan yang dapat diinput berupa angka-->
+                    </div>
+                    <div class="form_group">
+                        <label for=""> Harga</label>
+                        <input type="text">
+                    </div>
+                    <button>Tambahkan</button> <!--membuat button-->
+                </form>
+            </div>
+        </div>
+    
+        <div class="sales_table"> <!--membungkus kelas yang berada di dalam form penjualan-->
+            <div class="card"> <!--kelas form card untuk style dan memberikan kotak di dalam form nama kelas disamakan agar mempermudah styling-->
+                <h2>Data Penjualan Bulanan</h2>
+                <table border="1"> <!--memberikan border pada kolom dan baris table-->
+                    <thead> <!--header dari si tabel-->
+                        <tr> <!--Table row / judul dari si table-->
+                            <td rowspan="2">No</td>
+                            <td rowspan="2">Produk</td> 
+                            <td colspan="2">Penjualan</td>
+                        </tr>
+                        <tr> <!--dipisahkan agar dapat memberikan input seperti soal-->
+                            <td>Jumlah</td> 
+                            <td>Harga Total</td>
+                        </tr>
+                    </thead>
+                    <tbody> <!--isi dari si table-->
+                        <tr> <!--table row (mengisi perbaris)-->
+                            <td>1</td>
+                            <td>Sepatu</td>
+                            <td>50</td>
+                            <td>Rp 25.000.000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tas</td>
+                            <td>30</td>
+                            <td>Rp 15.000.000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Jam Tangan</td>
+                            <td>20</td>
+                            <td>Rp 10.000.000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot> <!--table footer-->
+                        <tr>
+                            <td colspan="2">Total Penjualan</td> <!--colspan agar mengisi baris setelahnya-->
+                            <td>100</td>
+                            <td>Rp 50.000.000</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>
