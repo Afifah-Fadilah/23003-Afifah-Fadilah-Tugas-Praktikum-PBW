@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form & Table Tailwind</title>
+    <link href="./output.css" rel="stylesheet"> <!--menghubungkan file CSS eksternal (tailwind CSS)-->
+</head>
+<body class="bg-gray-200 font-sans"> <!--mengatur latar belakang halaman dan font-->
+    <div class="mt-12 ml-10"> <!--membuat margin atas dan kiri untuk posisi elemen form dan table -->
+        <div class="container">
+            <div class="bg-white p-6 w-120 shadow-md rounded-lg hover:scale-105 transition-transform"> <!--kelas form dengan bg putih, shadows, border rounded dan efek animasi ketika hover-->
+                <h2 class="text-center text-xl font-bold">Form Penjualan</h2> <!--kelas form penjualan dengan teks ditengah, uk besar dan tebal-->
+                <form action="" method="post">
+                    <div class="mb-3 flex flex-col font-bold"> <!--pemberian jarak margin bawah dan merubahnya ke flex col agar berada di bawah judul label dan ukuran font tebal-->
+                        <label for="produk" class="pb-1">Produk</label> <!--menyesuaikan padding bawah -->
+                        <input type="text" id="produk" class="p-1 border border-gray-300 rounded focus:border-pink-500 outline-none"> <!--menyesuaikan padding, warna border kotak input dan outline-->
+                    </div>
+                    <div class="mb-3 flex flex-col font-bold">
+                        <label for="jumlah" class="pb-1">Jumlah</label>
+                        <input type="number" id="jumlah" class="p-1 border border-gray-300 rounded focus:border-pink-500 outline-none">
+                    </div>
+                    <div class="mb-3 flex flex-col font-bold">
+                        <label for="harga" class="pb-1">Harga</label>
+                        <input type="text" id="harga" class="p-1 border border-gray-300 rounded focus:border-pink-500 outline-none">
+                    </div>
+                    <button class="mt-2 bg-pink-500 text-white font-bold py-2 rounded cursor-pointer w-full ">Tambahkan</button> <!--menyesuaikan margin atas, warna teks, padding atas bawah, dan button berukuran full sesuai uk parent-->
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-5"> <!--margin atas dengan uk 5-->
+            <div class="bg-white p-6 w-120 shadow-md rounded-lg hover:scale-105 transition-transform"> <!--bg putih, padding 6, lebar 120, bayangan, dan pemberien efek animasi ketika hover-->
+                <h2 class="text-center text-xl font-bold">Data Penjualan Bulanan</h2> <!--judul di tengah, uk besar dan font tebal-->
+                <table class="w-full mt-3 text-center"> <!--width full, margin atas sdan teks ditengah -->
+                    <thead class="bg-blue-500 text-white font-bold"> <!--memberikan warna bg, teks berwarna putih dan tebal-->
+                        <tr>
+                            <td rowspan="2" class="border border-gray-300 p-1">No</td> <!--memberikan border tabel berwarna grey dan padding 2-->
+                            <td rowspan="2" class="border border-gray-300 p-1">Produk</td>
+                            <td colspan="2" class="border border-gray-300 p-2">Penjualan</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">Jumlah</td>
+                            <td class="border border-gray-300 p-2">Harga Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">Sepatu</td>
+                            <td class="border border-gray-300 p-2">50</td>
+                            <td class="border border-gray-300 p-2">Rp 25.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">2</td>
+                            <td class="border border-gray-300 p-2">Tas</td>
+                            <td class="border border-gray-300 p-2">30</td>
+                            <td class="border border-gray-300 p-2">Rp 15.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">3</td>
+                            <td class="border border-gray-300 p-2">Jam Tangan</td>
+                            <td class="border border-gray-300 p-2">20</td>
+                            <td class="border border-gray-300 p-2">Rp 10.000.000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="bg-gray-100 font-bold"> <!--memberikan bg warna abu dan font tebal untuk table footer-->
+                        <tr>
+                            <td colspan="2" class="border border-gray-300 p-2">Total Penjualan</td> 
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">Rp 50.000.000</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
