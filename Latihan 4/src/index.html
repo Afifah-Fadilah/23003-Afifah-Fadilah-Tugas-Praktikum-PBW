@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!--Menggunakan font external yaitu dari google font -->
+    <link href="./output.css" rel="stylesheet"> <!-- Menghubungkan file CSS eksternal dalam hal ini tailwind -->
+</head>
+
+<body>
+<!-- Section Tentang -->
+<section id="tentang">
+    <!-- Header -->
+    <header class="bg-[#504B38] text-white py-8 text-center">
+        <nav class="mb-4"> <!-- Link navigasi dengan efek hover -->
+            <a href="#tentang" class="mx-1 px-2 py-1.5 font-[Poppins] rounded border-1 hover:bg-[#F8F3D9] hover:text-orange-400 hover:shadow-md transition duration-300">Tentang</a>
+            <a href="#proyek" class="mx-1 px-2 py-1.5 font-[Poppins] rounded border-1 hover:bg-[#F8F3D9] hover:text-orange-400 hover:shadow-md transition duration-300">Proyek</a>
+            <a href="#kontak" class="mx-1 px-2 py-1.5 font-[Poppins] rounded border-1 hover:bg-[#F8F3D9] hover:text-orange-400 hover:shadow-md transition duration-300">Kontak</a>
+        </nav>
+        <!-- Judul dan deskripsi -->
+        <h1 class="text-3xl font-bold">Portfolio 'Afifah Fadilah'</h1> 
+        <p class="p-2 font-[Poppins] font-bold mt-3 text-[#D98324]">Frontend Developer & Designer</p>
+    </header>
+
+    <!-- div class tentang -->
+    <div class="bg-[#F8F3D9] min-h-[60vh] flex flex-col justify-start items-center text-center pt-20">
+    <div class="relative overflow-hidden rounded-full w-60 h-60 mb-10 shadow-xl">
+        <!-- Gambar default -->
+        <img src="profile.png" alt="Profile" class="w-full h-full object-cover transition-opacity duration-400 absolute opacity-100 hover:opacity-0"> <!--opacity 100 ke opacity 0 agar gambar yang sekarang tidak terlihat dan akan memperlihatkan gambar di belakangnya-->
+        <!-- Gambar saat hover -->
+        <img src="profile1.png" alt="Profile Hover" class="w-full h-full object-cover transition-opacity duration-400 absolute opacity-0 hover:opacity-100"> <!--opacity 0 ke opacity 100 agar gambar di definisikan tdk dimunculkan dulu, namun setelah hover gambar akan muncul-->
+    </div>
+    <h2 class="text-2xl font-bold mb-7 text-[#D98324]">Tentang Saya</h2>
+    <p class="text-gray-600 max-w-lg font-[Poppins]">Saya adalah seorang mahasiswa Informatika Semester 4 yang sedang belajar Frontend yang berfokus pada desain modern dan responsif menggunakan teknologi terbaru.</p>
+</section>
+
+    <!-- Section Proyek -->
+    <section id="proyek" class="min-h-[90vh] bg-[#F8F3D9] flex flex-col justify-center items-center text-center">
+        <h2 class="text-2xl font-bold mb-10 text-[#D98324]">Proyek</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Menampilkan proyek dalam grid -->
+            <div class="bg-white p-4 rounded-lg max-w-sm transition-transform duration-200 hover:shadow-lg"> <!-- Kartu proyek 1 -->
+                <img src="app_salon.png" alt="Aplikasi Reservasi Salon" class="rounded-md mb-2 w-75 h-75 object-cover transition-transform duration-300 hover:scale-105">
+                <h3 class="font-bold text-[#504B38] m-3">Aplikasi Reservasi Salon</h3>
+                <p class="text-gray-600">Membuat desain interface dari aplikasi reservasi salon untuk proyek Pemprograman Berbasis Objek (PBO) secara berkelompok.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg max-w-sm transition duration-200 hover:shadow-lg"> <!-- Kartu proyek 2 -->
+                <img src="app_tutor.png" alt="Proyek 2" class="rounded-md mb-2 w-75 h-75 object-cover transition-transform duration-300 hover:scale-105">
+                <h3 class="font-bold text-[#504B38] m-3">Aplikasi Kursus Coding</h3>
+                <p class="text-gray-600">Membuat desain website yaitu web kursus koding untuk proyek MK Interaksi Manusia dan Komputer menggunakan Figma.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak -->
+    <section id="kontak" class="min-h-[50vh] bg-[#B9B28A] flex flex-col justify-center items-center text-center px-6 p-6 transition duration-300" data-aos="fade-up">
+        <h2 class="text-2xl font-bold text-[#504B38] mb-5">Kontak Saya</h2>
+        <p class="text-white font-[Poppins] mb-5">Temukan saya di sosial media berikut:</p>
+        <div class="flex space-x-4">
+            <!-- Link media sosial -->
+            <a href="https://www.linkedin.com/in/afifah-fadilah-a78528291/" target="_blank" class="flex items-center space-x-2 bg-[#504B38] text-white px-4 py-3 rounded hover:bg-[#D98324] shadow-md transition duration-300">
+                <img src="linkedin.png" alt="LinkedIn" class="w-6 h-6"> <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Afifah-Fadilah" target="_blank" class="flex items-center space-x-2 bg-[#504B38] text-white px-4 py-3 rounded hover:bg-[#D98324] shadow-md transition duration-300 ">
+                <img src="github.png" alt="GitHub" class="w-6 h-6"> <span>GitHub</span>
+            </a>
+            <a href="https://www.instagram.com/apipahpdlaa" target="_blank" class="flex items-center space-x-2 bg-[#504B38] text-white px-4 py-3 rounded hover:bg-[#D98324] shadow-md transition duration-300">
+                <img src="ig.png" alt="Instagram" class="w-6 h-6"> <span>Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#504B38] text-white text-center font-[Poppins] py-4 text-sm">
+        &copy; 2025 Portfolio Saya. Semua Hak Dilindungi.
+    </footer>
+</body>
+</html>
