@@ -1,0 +1,421 @@
+body { /*Style default web*/
+    font-family: Arial, sans-serif;
+    background: url('bg.png');
+    margin: 0;
+    padding: 0;
+    background-size:auto
+}
+
+/* Container utama untuk form atau konten lain dan container hasil untuk halaman hasil, dibatasi lebar 600px dan diberi padding serta bayangan */
+.container { 
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e86977;
+}
+
+/* Sama seperti .container, digunakan untuk halaman hasil, styling identik */
+.container-hasil {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e86977;
+}
+
+/* Style posisi untuk container-hasil dan card */
+.container-hasil, .card { 
+    position: relative;
+}
+
+/* Style untuk header web utama, berisikan nama web dan penjelasan kecil */
+header {
+    background-color: #ffffff;
+    color: #42393a;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style posisi untuk header yang judul berukuran h1 */
+header h1 {
+    padding-top: 0px;
+    margin: 0px;
+}
+
+/* Style posisi untuk header bagian paragraf */
+header p {
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+/* Style untuk nav bar kosong sebagai pembatas header */
+nav {
+    background: linear-gradient(45deg, #b60016, #be8389);
+    overflow: hidden;
+        box-shadow: 0 6px 20px #e8697890;
+}
+
+/* Style ukuran pembatas header berwarna merah */
+nav a {
+    padding: 18px 30px;
+}
+
+/* Style untuk semua title berukuran h1 */
+h1{
+    margin-top: 0%;
+    text-align: center;
+    color: #b60016;
+}
+
+/* Style untuk semua title berukuran h2 */
+h2 {
+    color: #b60016;
+}
+
+/* Style untuk semua title berukuran h3 */
+h3 {
+    padding-top: 14px;
+    color: #b60016;
+}
+
+/* Style untuk form yang ada di index.php */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Baris pada form, menampung 2 elemen form secara horizontal dengan jarak antar elemen */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+/* Grup dalam form (label + input), tersusun secara vertikal */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* style untuk label di halaman index.php */
+label {
+    margin-top: 2px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    color: #b60016;
+}
+
+/* style untuk input dan select di form pendaftaran */
+input, select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #b60016;
+    border-radius: 5px;
+}
+
+/* style untuk menampilkan tgl inputan */
+.tgl-input {
+    padding-top: 15px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* style untuk menampilkan tgl inputan */
+.tgl-input-cetak {
+    font-size: 14px;
+    padding-top: 0px;
+    color: #555;
+}
+
+/* style untuk beberapa button dalam web */
+button, .btn, .btn-secondary {
+    font-size: medium;
+    margin-top: 8px;
+    padding: 10px;
+    background: linear-gradient(45deg, #b60016, #be8389);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* efek ketika kursor di arahkan ke button  */
+button:hover{
+    background: #c17e85;
+}
+
+/* Warna khusus untuk tombol sekunder, seperti tombol kembali */
+.btn-secondary {
+    background: #ffd6da;
+    color: #b60016;
+}
+
+/* efek ketika kursor di arahkan ke button  */
+.btn-secondary:hover{
+    background: #ffc3c9;
+}
+
+/* Tambahan warna untuk tombol kembali */
+.btn-back {
+    background: #be8389;
+}
+
+/* style untuk table */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+/* style untuk table-pendaftaran */
+.tabel-pendaftaran {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* style untuk table-pajak */
+.tabel-pajak {
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* style untuk table header dan table data */
+th, td {
+    padding: 2px;
+    border-bottom: 1px solid #debbbf;
+}
+
+/* style untuk table-pendaftaran pada table data*/
+.tabel-pendaftaran td {
+    padding-left: 0px;
+}
+
+/* style untuk table-pendaftaran pada table data*/
+.tabel-pajak td {
+    padding-right: 100px;
+}
+
+/* Kartu data dengan padding dan latar merah muda, digunakan untuk menampilkan blok informasi */
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #ffe2e5;
+    border-radius: 10px;
+}
+
+/*style untuk kelas buttons*/
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/*style untuk kelas buttons dan button back*/
+.buttons .btn-back{
+    background: #be8389;
+}
+
+/* Layout dua kolom yang sejajar, biasanya digunakan untuk tampilan data split */
+.two-columns {
+    display: flex;
+    gap: 20px;
+}
+
+/* Masing-masing kolom di layout .two-columns, punya latar berbeda dan padding */
+.column {
+    flex: 1;
+    background: #fff3f4;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Daftar pendaftaran dalam bentuk list, tanpa bullet dan distyling */
+.list-pendaftaran {
+    list-style: none;
+    padding: 0;
+}
+/* ubah jarak daftar pendaftaran pada list item */
+.list-pendaftaran li {
+    margin-bottom: 10px;
+}
+
+/* Gaya tombol/link daftar pendaftaran */
+.list-pendaftaran a {
+    text-decoration: none;
+    background-color: #b60016;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+/* Gaya saat link di-hover */
+.list-pendaftaran a:hover {
+    background-color: #be8389;
+}
+
+ /* Container popup (overlay seluruh layar) */
+.popup {
+    display: none; /* Awalnya sembunyi */
+    position: fixed;
+    z-index: 999; /* Biar di atas semua */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam transparan */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Konten utama popup */
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Tombol tidak aktif */
+.btn-disabled {
+    background-color: grey;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* Styling khusus untuk tiket cetak */
+.tiket-style {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Kotak utama tiket */
+.tiket-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+/* Bagian judul tiket */
+.tiket-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Judul utama halaman tiket*/
+.tiket-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Subjudul / ID penerbangan */
+.tiket-header p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Tabel detail tiket */
+.tiket-details {
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Sel tabel tiket */
+.tiket-details th, .tiket-details td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Kolom judul (kiri) */
+.tiket-details th {
+    width: 30%;
+    background-color: #f4f4f4;
+}
+
+/* Bagian bawah tiket */
+.tiket-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Tombol di bawah tiket */
+.btn-cetak, .btn-kembali {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+ /* Tombol cetak */
+.btn-cetak {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-cetak:hover {
+    background-color: #218838;
+}
+
+.btn-kembali {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-kembali:hover {
+    background-color: #0056b3;
+}
+
+/* Media print: saat halaman dicetak */
+@media print {
+    .tiket-style {
+        display: block;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+    .tiket-container {
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+        border: none;
+    }
+    .btn-cetak, .btn-kembali {
+        display: none; /* Menyembunyikan tombol saat diprint */
+    }
+    .tiket-footer {
+        display: none;
+    }
+}
