@@ -1,0 +1,466 @@
+:root {
+    --light-color: #FBF5E5;
+    --pink-light: #C890A7;
+    --pink: #A35C7A;
+    --dark-color: #212121;
+}
+
+body {
+    margin: 0;
+    background-color: var(--light-color);
+    color: #333;
+}
+
+body, input, select, textarea, button {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.container {
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.header-nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+/* Header Styles */
+.header {
+    background-color: var(--pink-light);
+    color: white;
+    padding: 25px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: var(--pink);
+    padding: 15px 0;
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: var(--dark-color);
+}
+
+/* Dashboard Styles */
+.dashboard {
+    padding: 30px 10px;
+    padding-top: 120px;
+}
+
+.dashboard-header {
+    margin-top: 50px;
+}
+
+.dashboard-header p {
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.dashboard-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    color: var(--pink);
+    font-size: 16px;
+}
+
+.stat-card .value {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.stat-card.primary {
+    border-top: 4px solid var(--dark-color);
+}
+
+.stat-card.success {
+    border-top: 4px solid var(--pink);
+}
+
+.stat-card.warning {
+    border-top: 4px solid var(--pink-light);
+}
+
+/* Table Styles */
+.data-table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.data-table-header {
+    background-color: #fff4fa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-table h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--pink);
+}
+
+.search-form {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .search-form input[type="text"] {
+        padding: 9px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+    }
+
+    .search-form .btn {
+        padding: 9px 20px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .search-form .btn-primary {
+        background-color: var(--pink);
+        color: white;
+    }
+
+    .search-form .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+    
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #fff4fa;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+table tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+table tr:hover {
+    background-color: #fff4fa;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 4px;
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--pink);
+    border-color: var(--pink-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--pink-light);
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: var(--dark-color);
+    border-color: var(--light-color);
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: var(--pink);
+    border-color: var(--pink-light);
+}
+
+.btn-warning:hover {
+    background-color: var(--pink-light);
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.form-group label {
+    width: 150px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 9px 15px;
+    font-size: 15px;
+    padding-right: 20px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+select.form-control {
+    height: 42px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex: 1; /* Supaya inputannya mengisi sisa baris */
+}
+
+.btn-save {
+    text-align: right; /* Menggeser tombol ke kanan */
+    margin-top: 1rem;
+    margin-right: 20px;
+}
+
+.nama-highlight {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.matkul-highlight {
+    color: var(--pink-light);
+    font-weight: bold;
+}
+
+
+/* Alert Styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--pink);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+/* Actions column style */
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-primary {
+    color: #fff;
+    background-color: var(--pink-light);
+}
+
+.badge-success {
+    color: #fff;
+    background-color: var(--pink-light);
+}
+
+.badge-info {
+    color: #fff;
+    background-color: #17a2b8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    
+    .navbar li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .dashboard-stats {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        width: 100%;
+    }
+}
