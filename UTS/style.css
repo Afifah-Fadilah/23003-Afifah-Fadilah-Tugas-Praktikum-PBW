@@ -1,0 +1,195 @@
+/* Custom Styles */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom Colors */
+.bg-pink-50 {
+    background-color: #fdf2f8;
+}
+.bg-mint-50 {
+    background-color: #f0fdfa;
+}
+.bg-peach-50 {
+    background-color: #fff1f2;
+}
+.bg-lemon-50 {
+    background-color: #fefce8;
+}
+
+/* Fonts */
+.font-comic-neue {
+    font-family: 'Comic Neue', cursive;
+}
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.3);
+}
+.btn-primary:hover {
+    box-shadow: 0 6px 8px rgba(236, 72, 153, 0.4);
+}
+
+.btn-secondary {
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.2);
+}
+
+/* Product Cards */
+.product-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Efek muncul */
+.product-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* animasi masuk produk */
+.product-card.appear-delay {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition-delay: var(--delay);
+}
+
+/* Kartu sudah tampil – menghapus delay agar hover langsung */
+.product-card.appeared {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s; /* supaya hover tidak kena delay */
+}
+
+/* Hover kartu produk: sedikit naik + shadow */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+    z-index: 2;
+    transition-delay: 0s !important;
+}
+
+
+/* Promo Cards */
+.promo-card {
+    transition: all 0.3s ease;
+}
+.promo-card:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Social Buttons */
+.social-btn {
+    transition: all 0.3s ease;
+}
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial Bubbles */
+.testimonial-bubble {
+    position: relative;
+    border-radius: 20px;
+}
+.testimonial-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #fbcfe8 transparent;
+}
+
+/* Rating stars styling */
+    .rating-stars .star-label i {
+        color: #d1d5db; /* Warna abu-abu default */
+        transition: all 0.2s ease;
+    }
+    
+    /* Warna kuning untuk bintang terpilih */
+    .rating-stars input:checked ~ .star-label i,
+    .rating-stars input:checked + .star-label i {
+        color: #fbbf24;
+    }
+    
+    /* Efek hover - hanya mengisi sampai bintang yang dihover */
+    .rating-stars .star-label:hover i {
+        color: #fbbf24;
+        transform: scale(1.2);
+    }
+    
+    .rating-stars .star-label:hover ~ .star-label i {
+        color: #d1d5db; /* Reset bintang setelahnya */
+    }
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Active Nav Link */
+.nav-link.active {
+    color: #ec4899;
+    font-weight: bold;
+    border-bottom: 2px solid #ec4899;
+}
+
+/* style cursor berkedip untuk efek mengetik */
+.typing-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #ec4899; /* pink-600 */
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* animasi elemen garis kuning sebagai pembatas judul */
+@keyframes slide-in-bounce {
+  0% {
+    transform: translateX(-100%) scaleX(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(10%) scaleX(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+.animate-slide-in-bounce {
+  animation: slide-in-bounce 0.8s ease-out forwards;
+}

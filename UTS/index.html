@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crèamyo! - Homemade Happiness</title> <!-- Judul halaman yang akan muncul di tab browser -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!--import tailwind css untuk styling-->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet"> <!--import font Comic Neue dan Nunito dari Google Fonts-->
+    <link rel="stylesheet" href="style.css"> <!-- import file CSS lokal untuk tambahan styling seperti hover) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--import icon dari font awesome-->
+</head>
+<body class="font-nunito bg-pink-50"> <!--menggunakan font nunito untuk keseluruhan font dengan bg pink-->
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50"> <!--navbar fixed-->
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-3xl font-comic-neue font-bold text-pink-500 flex items-center">
+                <span class="mr-2 text-xxl">🍦</span> Crèamyo! <!--logo website-->
+            </a>
+            <div class="hidden md:flex space-x-8"> <!-- Menu nav disembunyikan di layar kecil, hanya tampil di md↑-->
+                <a href="#home" class="nav-link text-pink-600 hover:text-pink-400">Home</a>
+                <a href="#products" class="nav-link text-pink-600 hover:text-pink-400">Produk</a>
+                <a href="#promo" class="nav-link text-pink-600 hover:text-pink-400">Promo</a>
+                <a href="#testimonials" class="nav-link text-pink-600 hover:text-pink-400">Testimoni</a>
+                <a href="#suggestions" class="nav-link text-pink-600 hover:text-pink-400">Saran</a>
+                <a href="#contact" class="nav-link text-pink-600 hover:text-pink-400">Kontak</a>
+                <a href="#location" class="nav-link text-pink-600 hover:text-pink-400">Lokasi</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button"> <!-- Tombol menu hanya muncul di mobile -->
+                <i class="fas fa-bars text-pink-600 text-2xl"></i> <!-- Ikon hamburger dari Font Awesome -->
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-6 py-3" id="mobile-menu"> <!-- Menu mobile disembunyikan default, tampil jika tombol ditekan -->
+            <a href="#home" class="block py-2 text-pink-600">Home</a>
+            <a href="#products" class="block py-2 text-pink-600">Produk</a>
+            <a href="#promo" class="block py-2 text-pink-600">Promo</a>
+            <a href="#testimonials" class="block py-2 text-pink-600">Testimoni</a>
+            <a href="#suggestions" class="block py-2 text-pink-600">Saran</a>
+            <a href="#contact" class="block py-2 text-pink-600">Kontak</a>
+            <a href="#location" class="block py-2 text-pink-600">Lokasi</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-r from-pink-100 to-yellow-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center"> <!-- Kontainer isi, tata letak kolom di mobile dan baris di desktop -->
+            <div class="md:w-1/2 mb-10 md:mb-0"> <!-- Kolom kiri: teks, lebar 1/2 di md↑, margin bawah di mobile -->
+                <h1 class="text-5xl font-bold text-pink-600 mb-4 font-comic-neue h-[72px] overflow-hidden"> <!-- Judul besar dengan menggunakan script agar teks berjalan -->
+                    <span id="typing-text"></span><span class="typing-cursor">|</span> 
+                </h1>
+                <p class="text-xl text-gray-700 mb-8">Rasakan kelezatan es krim buatan tangan dengan bahan-bahan alami pilihan. 100% tanpa pengawet!</p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="btn-primary bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-bold transform hover:scale-105 transition-transform">
+                        Beli Sekarang <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#promo" class="btn-secondary border-2 border-pink-500 text-pink-600 hover:bg-pink-50 px-8 py-3 rounded-full text-lg font-bold transform hover:scale-105 transition-transform">
+                        Lihat Promo
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center"> <!-- Kolom kanan: gambar, lebar 1/2 di md↑, isi diratakan ke tengah -->
+                <img src="gambar/allvariant.png" alt="Delicious Ice Cream" class="rounded-lg w-[500px] h-auto object-cover transform hover:rotate-2 transition-transform">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-10 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Pilihan Rasa Kami</h2>
+                <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Temukan rasa favoritmu dari koleksi es krim homemade kami yang lezat!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> <!-- Grid responsif: 1 kolom di mobile, 2 di tablet, 3 di desktop -->
+                <!-- Product Card 1 -->
+                <div class="product-card bg-pink-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/strawberry_cheesecake.jpeg" alt="Strawberry Cheesecake" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Strawberry Cheesecake</h3> <!-- Judul produk -->
+                    <p class="text-gray-600 text-center mb-4">Perpaduan sempurna strawberry segar dengan cheesecake creamy.</p> <!-- Deskripsi produk -->
+                    <div class="flex justify-center mb-4"> <!-- Rating bintang -->
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <div class="text-center"> <!-- div untuk harga dan button keranjang -->
+                        <span class="text-xl font-bold text-pink-600">Rp 25.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card bg-mint-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/chocolate_fudge.jpeg" alt="Chocolate Fudge" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Chocolate Fudge</h3>
+                    <p class="text-gray-600 text-center mb-4">Coklat belgia premium dengan fudge sauce yang melimpah.</p>
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-pink-600">Rp 28.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card bg-peach-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/vanilla_dream.jpeg" alt="Vanilla Dream" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Vanilla Dream</h3>
+                    <p class="text-gray-600 text-center mb-4">Vanilla Madagascar asli dengan biji vanilla yang terlihat.</p>
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-pink-600">Rp 22.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card bg-lemon-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/mango_tango.png" alt="Mango Tango" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Mango Tango</h3>
+                    <p class="text-gray-600 text-center mb-4">Mangga harum manis dengan sentuhan jeruk yang menyegarkan.</p>
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-pink-600">Rp 24.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 5 -->
+                <div class="product-card bg-blue-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/blueberry_blast.png" alt="Blueberry Blast" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Blueberry Blast</h3>
+                    <p class="text-gray-600 text-center mb-4">Blueberry segar dengan yogurt creamy dan potongan blueberry.</p>
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-pink-600">Rp 26.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 6 -->
+                <div class="product-card bg-purple-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 duration-700">
+                    <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-inner overflow-hidden">
+                        <img src="gambar/cookies_cream.png" alt="Cookies & Cream" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-center text-pink-600 mb-2">Cookies & Cream</h3>
+                    <p class="text-gray-600 text-center mb-4">Vanilla premium dengan potongan cookies coklat yang renyah.</p>
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xl font-bold text-pink-600">Rp 27.000</span>
+                        <button class="ml-4 bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold transition-colors">
+                            + Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12"> <!--div button untuk melihat semua rasa yang belum di tambahkan dalam program-->
+                <button class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-lg font-bold transform hover:scale-105 transition-transform">
+                    Lihat Semua Rasa <i class="fas fa-ice-cream ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promo" class="py-10 px-6 bg-gradient-to-r from-yellow-50 to-pink-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Promo Spesial</h2> <!--Judul slide promo-->
+                <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-6"></div> <!--pembatas-->
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Nikmati penawaran menarik khusus untuk kamu!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"> <!-- Grid responsif untuk menampilkan dua kolom promo di desktop dan satu kolom di mobile -->
+                <!-- Promo 1 -->
+                <div class="promo-card bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-101">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0 flex justify-center"> <!-- Kolom 1 - gambar -->
+                            <div class="relative">
+                                <img src="gambar/family_pack.jpeg" alt="Family Pack" class="w-40 h-40 object-contain rounded-lg">
+                                <div class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl animate-pulse">
+                                    -30%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/2 md:pl-8"> <!-- Kolom 2 - Judul, deskripsi, harga, button promo -->
+                            <h3 class="text-2xl font-bold text-pink-600 mb-2">Family Pack</h3>
+                            <p class="text-gray-600 mb-4">Dapatkan 5 scoop es krim pilihan hanya dengan harga 4 scoop! Hemat sampai Rp 30.000.</p>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold text-pink-600">Rp 100.000</span>
+                                <span class="ml-2 text-gray-500 line-through">Rp 130.000</span> <!--line-through untuk efek mencoret harga-->
+                                <span class="ml-auto bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold">Terbatas</span>
+                            </div>
+                            <button class="mt-4 w-full promo-btn bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-bold transition-colors">
+                                Dapatkan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo 2 -->
+                <div class="promo-card bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-101">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0 flex justify-center">
+                            <div class="relative">
+                                <img src="gambar/happy_hour.jpeg" alt="Happy Hour" class="w-40 h-40 object-contain rounded-lg">
+                                <div class="absolute -top-4 -right-4 bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl animate-pulse">
+                                    1+1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-pink-600 mb-2">Happy Hour</h3>
+                            <p class="text-gray-600 mb-4">Setiap hari pukul 14.00-17.00, beli 1 dapat 1 gratis untuk semua varian rasa!</p>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold text-pink-600">Rp 22.000</span>
+                                <span class="ml-2 text-gray-500 line-through">Rp 44.000</span>
+                                <span class="ml-auto bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-bold">Harian</span>
+                            </div>
+                            <button class="mt-4 w-full promo-btn bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-bold transition-colors">
+                                Lihat Jadwal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo 3 -->
+                <div class="promo-card bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-101">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0 flex justify-center">
+                            <div class="relative">
+                                <img src="gambar/birthday_special.jpeg" alt="Birthday Special" class="w-40 h-40 object-contain rounded-lg">
+                                <div class="absolute -top-4 -right-4 bg-purple-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl animate-pulse">
+                                    Free
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-pink-600 mb-2">Birthday Special</h3>
+                            <p class="text-gray-600 mb-4">Tunjukkan KTP di hari ulang tahunmu dan dapatkan 1 scoop es krim gratis!</p>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold text-pink-600">Rp 0</span>
+                                <span class="ml-2 text-gray-500 line-through">Rp 25.000</span>
+                                <span class="ml-auto bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-bold">Spesial</span>
+                            </div>
+                            <button class="mt-4 w-full promo-btn bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-bold transition-colors">
+                                Klaim Hadiah
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo 4 -->
+                <div class="promo-card bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-101">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0 flex justify-center">
+                            <div class="relative">
+                                <img src="gambar/member_card.jpeg" alt="Member Card" class="w-40 h-40 object-contain rounded-lg">
+                                <div class="absolute -top-4 -right-4 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl animate-pulse">
+                                    -10%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-pink-600 mb-2">Member Card</h3>
+                            <p class="text-gray-600 mb-4">Daftar member sekarang dan dapatkan diskon 10% untuk setiap pembelian!</p>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold text-pink-600">Rp 50.000</span>
+                                <span class="ml-2 text-gray-500 line-through">Rp 100.000</span>
+                                <span class="ml-auto bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-bold">Tahunan</span>
+                            </div>
+                            <button class="mt-4 w-full promo-btn bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-bold transition-colors">
+                                Daftar Member
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6 bg-white">
+        <div class="container mx-auto mb-19">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Kata Pelanggan</h2> <!-- Judul section di slide testimoni -->
+                    <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-6"></div> <!-- Garis dekoratif di bawah judul -->
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mt-10 mb-10">Apa kata mereka tentang Ice Cream Delight?</p>
+            </div>
+
+            <div class="testimonial-slider relative max-w-4xl mx-auto overflow"> <!-- Container slider testimonial -->
+                <div class="testimonial-slides flex transition-transform duration-500 ease-in-out"> <!-- Track untuk geser-geser testimonial -->
+                    <!-- Testimonial (clone of last) -->
+                    <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                        <div class="bg-blue-100 rounded-3xl p-6 relative shadow-lg">
+                            <div class="absolute -top-6 -left-6 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-md">
+                                <img src="https://assets.pikiran-rakyat.com/crop/255x88:681x372/750x500/photo/2022/01/30/2305754499.jpeg" alt="Customer" class="rounded-full w-14 h-14 object-cover"> <!-- Photo profile pelanggan -->
+                            </div>
+                            <div class="pl-16">
+                                <div class="flex mb-2"> <!-- rate bintang -->
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 mb-4">"Thanks udah nyiptain ice cream seenak ini dengan harga terjangkau. Jadi bisa kesini tiap hari bareng pacar hehe😁!! BTW pacar aku suka banget sama blueberry blast nyaa, kalo aku lebih suka liatin dia makan ice cream, soalnya tambah cantikkk"</p> <!-- Testimoni dr pelanggan -->
+                                <p class="font-bold text-pink-600">- Lomon, 19</p> <!-- Nama dan umur pelanggan -->
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-md"> <!-- Ikon kutipan -->
+                                <i class="fas fa-quote-right text-blue-400 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                        <div class="bg-pink-100 rounded-3xl p-6 relative shadow-lg">
+                            <div class="absolute -top-6 -left-6 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-md">
+                                <img src="https://akcdn.detik.net.id/visual/2023/04/30/go-yoon-jung-foto-koreaboocom_169.jpeg?w=700&q=90" alt="Customer" class="rounded-full w-14 h-14 object-cover">
+                            </div>
+                            <div class="pl-16">
+                                <div class="flex mb-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 mb-4">"Rasanya walaupun homemade tapi enakk gilaa!!! Strawberry Cheesecake favorit gue, ngga terlalu manis dan teksturnya creamy bangett. gue juga suka ama topping nya banyak bgttt!"</p>
+                                <p class="font-bold text-pink-600">- Sarah, 20</p>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                                <i class="fas fa-quote-right text-pink-400 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                        <div class="bg-yellow-100 rounded-3xl p-6 relative shadow-lg">
+                            <div class="absolute -top-6 -left-6 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-md">
+                                <img src="https://akcdn.detik.net.id/visual/2024/09/05/moon-woo-jinfoto-instagramcommwjmom.jpeg?w=480&q=90" alt="Customer" class="rounded-full w-14 h-14 object-cover">
+                            </div>
+                            <div class="pl-16">
+                                <div class="flex mb-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 mb-4">"Happy Hour-nya bener-bener worth it! Aku sering datang jam 4 sore bareng temen buat dapet promo setengah harga. Chocolate Fudge-nya the best!"</p>
+                                <p class="font-bold text-pink-600">- Budi, 15</p>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                                <i class="fas fa-quote-right text-yellow-400 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                        <div class="bg-blue-100 rounded-3xl p-6 relative shadow-lg">
+                            <div class="absolute -top-6 -left-6 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-md">
+                                <img src="https://assets.pikiran-rakyat.com/crop/255x88:681x372/750x500/photo/2022/01/30/2305754499.jpeg" alt="Customer" class="rounded-full w-14 h-14 object-cover">
+                            </div>
+                            <div class="pl-16">
+                                <div class="flex mb-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 mb-4">"Thanks udah nyiptain ice cream seenak ini dengan harga terjangkau. Jadi bisa kesini tiap hari bareng pacar hehe😁!! BTW pacar aku suka banget sama blueberry blast nyaa, kalo aku lebih suka liatin dia makan ice cream, soalnya tambah cantikkk"</p>
+                                <p class="font-bold text-pink-600">- Lomon, 19</p>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                                <i class="fas fa-quote-right text-blue-400 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial (clone of first) -->
+                    <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                        <div class="bg-pink-100 rounded-3xl p-6 relative shadow-lg">
+                            <div class="absolute -top-6 -left-6 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-md">
+                                <img src="https://akcdn.detik.net.id/visual/2023/04/30/go-yoon-jung-foto-koreaboocom_169.jpeg?w=700&q=90" alt="Customer" class="rounded-full w-14 h-14 object-cover">
+                            </div>
+                            <div class="pl-16">
+                                <div class="flex mb-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 mb-4">"Rasanya walaupun homemade tapi enakk gilaa!!! Strawberry Cheesecake favorit gue, ngga terlalu manis dan teksturnya creamy bangett. gue juga suka ama topping nya banyak bgttt!"</p>
+                                <p class="font-bold text-pink-600">- Sarah, 20</p>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-md">
+                                <i class="fas fa-quote-right text-pink-400 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons (untuk membuat tombol kiri dan kanan/geser manual)-->
+                <button class="testimonial-prev absolute left-0 top-1/2 transform -translate-y-1/2 -ml-6 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md text-pink-600 hover:text-pink-800 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-next absolute right-0 top-1/2 transform -translate-y-1/2 -mr-6 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md text-pink-600 hover:text-pink-800 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Dots (Titik-titik navigasi slider) -->
+            <div class="flex justify-center mt-40 space-x-2">
+                <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-300 focus:outline-none"></button>
+                <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-300 focus:outline-none"></button>
+                <button class="testimonial-dot w-3 h-3 rounded-full bg-pink-300 focus:outline-none"></button>
+            </div> 
+        </div class="mb-25">
+    </section>
+
+
+    <!-- Suggestions Section -->
+    <section id="suggestions" class="py-10 px-6 bg-gradient-to-r from-pink-50 to-blue-50">
+        <div class="container mx-auto max-w-2xl">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Saran & Masukan</h2> <!--judul slide suggestion / saran-->
+                <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-10 mt-"></div> <!--style pembatas-->
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Bantu kami menjadi lebih baik dengan memberikan saranmu!</p>
+            </div>
+            
+            <form id="suggestion-form" class="bg-white rounded-xl shadow-lg p-8"> <!--form saran berisikan nama, email, saran/masukan, rating, dan button kirim-->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Nama Anda</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-pink-500 focus:border-transparent" placeholder="Nama lengkap" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-pink-500 focus:border-transparent" placeholder="email@contoh.com" required>
+                </div>
+                
+                <div class="mb-2">
+                    <label for="suggestion" class="block text-gray-700 font-bold mb-2">Saran/Masukan</label>
+                    <textarea id="suggestion" name="suggestion" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-pink-500 focus:border-transparent" placeholder="Apa yang bisa kami tingkatkan?" required></textarea>
+                </div>
+                
+                <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-4">Rating</label>
+                <div class="rating-stars flex justify-center"> <!--kontainer rating bintang dengan tambahan style dari js-->
+                    <div class="flex items-center space-x-1">
+                        <!-- Rating 1 -->
+                        <input type="radio" id="star1" name="rating" value="1" class="hidden">
+                        <label for="star1" class="text-3xl cursor-pointer text-gray-300 transition-all duration-200 star-label">
+                            <i class="fas fa-star" data-rating="1"></i>
+                        </label>
+                        
+                        <!-- Rating 2 -->
+                        <input type="radio" id="star2" name="rating" value="2" class="hidden">
+                        <label for="star2" class="text-3xl cursor-pointer text-gray-300 transition-all duration-200 star-label">
+                            <i class="fas fa-star" data-rating="2"></i>
+                        </label>
+                        
+                        <!-- Rating 3 -->
+                        <input type="radio" id="star3" name="rating" value="3" class="hidden">
+                        <label for="star3" class="text-3xl cursor-pointer text-gray-300 transition-all duration-200 star-label">
+                            <i class="fas fa-star" data-rating="3"></i>
+                        </label>
+                        
+                        <!-- Rating 4 -->
+                        <input type="radio" id="star4" name="rating" value="4" class="hidden">
+                        <label for="star4" class="text-3xl cursor-pointer text-gray-300 transition-all duration-200 star-label">
+                            <i class="fas fa-star" data-rating="4"></i>
+                        </label>
+                        
+                        <!-- Rating 5 -->
+                        <input type="radio" id="star5" name="rating" value="5" class="hidden">
+                        <label for="star5" class="text-3xl cursor-pointer text-gray-300 transition-all duration-200 star-label">
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </label>
+                    </div>
+                </div>
+        </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white px-5 py-2 rounded-full font-bold transform hover:scale-105 transition-transform">
+                        Kirim Saran <i class="fas fa-paper-plane ml-2"></i> <!--icon diambil dari font awesome-->
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-white">
+        <div class="container mb-12 mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Hubungi Kami</h2> <!--judul slide contact-->
+                <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-10 mt-"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ada pertanyaan? Jangan ragu untuk menghubungi kami!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto"> <!-- Grid 2 kolom (1 di mobile) -->
+                <div> <!-- Kolom kiri: Info kontak seperti wa, email, dan jam operasional-->
+                    <div class="flex items-start mb-8">
+                        <div class="bg-pink-100 rounded-full p-4 mr-6">
+                            <i class="fas fa-phone-alt text-pink-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Telepon/WhatsApp</h3>
+                            <p class="text-gray-600">+62 83127564060</p>
+                            <a href="https://wa.me/6283127564060" class="inline-block mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold transition-colors">
+                                <i class="fab fa-whatsapp mr-2"></i> Chat via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-8">
+                        <div class="bg-blue-100 rounded-full p-4 mr-6">
+                            <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
+                            <p class="text-gray-600">hello@crèamyo!.com</p>
+                            <a href="mailto:hello@icecreamdelight.com" class="inline-block mt-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold transition-colors">
+                                <i class="fas fa-envelope mr-2"></i> Kirim Email
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 rounded-full p-4 mr-6">
+                            <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Jam Operasional</h3>
+                            <p class="text-gray-600">Senin - Minggu</p>
+                            <p class="text-gray-600">10.00 - 22.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div> <!-- Kolom kanan: media sosial berisi media sosial, dan newsletter -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Media Sosial</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="social-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f text-xl mr-2"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/apipahpdlaa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn bg-pink-600 hover:bg-pink-700 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram text-xl mr-2"></i> Instagram
+                        </a>
+                        <a href="#" class="social-btn bg-blue-400 hover:bg-blue-500 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter text-xl mr-2"></i> Twitter
+                        </a>
+                        <a href="#" class="social-btn bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-youtube text-xl mr-2"></i> YouTube
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Newsletter</h3>
+                        <p class="text-gray-600 mb-4">Dapatkan promo dan update terbaru langsung ke email Anda!</p>
+                        <form class="flex">
+                            <input type="email" placeholder="Email Anda" class="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                            <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-r-lg font-bold transition-colors">
+                                Daftar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-10 px-6 bg-gradient-to-r from-pink-50 to-blue-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16"> <!-- Judul dan deskripsi section lokasi -->
+                <h2 class="text-4xl font-bold text-pink-600 mb-4 font-comic-neue">Lokasi Kami</h2>
+                <div class="slide w-24 h-2 bg-yellow-300 mx-auto mb-10 mt-3"></div> <!-- Garis dekoratif di bawah judul -->
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Kunjungi toko fisik kami untuk pengalaman es krim yang lebih menyenangkan!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto"> <!-- Konten utama dibagi 2 kolom untuk desktop, 1 kolom untuk mobile -->
+                <div> <!-- Kolom kiri: informasi lokasi -->
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Crèamyo!</h3> <!-- nama toko -->
+                    <p class="text-gray-600 mb-6"> <!-- lokasi toko -->
+                        Jl. HS.Ronggo Waluyo No. 123 Ruko A9<br>
+                        Puseurjaya, Telukjambe Timur, Karawang 41361<br>
+                        Jawa Barat, Indonesia
+                    </p>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-6 mb-8"> <!-- div petunjuk arah -->
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">Petunjuk Arah</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-building text-pink-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Kampus Terdekat: Kampus UNSIKA (2 menit jalan kaki)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-burger text-pink-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Dekat dengan berbagai kuliner dan jajanan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-parking text-pink-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Parkir tersedia di tempat (Rp 2.000 / motor)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-6"> <!-- div fasilitas toko -->
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">Fasilitas Toko</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-wifi text-pink-500 mr-2"></i>
+                                <span class="text-gray-600">Free WiFi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-baby-carriage text-pink-500 mr-2"></i>
+                                <span class="text-gray-600">Baby Chair</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-wheelchair text-pink-500 mr-2"></i>
+                                <span class="text-gray-600">Akses Difabel</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-toilet text-pink-500 mr-2"></i>
+                                <span class="text-gray-600">Toilet Bersih</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="h-96 bg-white rounded-xl shadow-xl overflow-hidden"> <!-- Kolom kanan: Peta Google Maps -->
+                    <!-- Iframe menampilkan lokasi toko menggunakan Google Maps embed -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d836.8876886377305!2d107.30640348385417!3d-6.323648891830559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sid!2sid!4v1748621101688!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-600 text-white py-10 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-5"> <!-- Grid 1 kolom di mobile, 4 kolom di md ke atas(desktop), jarak antar kolom -->
+                <div> <!-- Kolom pertama: logo dan sosial media -->
+                    <h3 class="text-2xl font-bold mb-3 font-comic-neue flex items-center">
+                        <i class="fas fa-ice-cream mr-2 text-yellow-300"></i> Crèamyo!
+                    </h3>
+                    <p class="mb-4">Homemade Happiness in Every Scoop!</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-yellow-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/apipahpdlaa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-white hover:text-yellow-300 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-300 text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-300 text-xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="pl-10"> <!-- Kolom kedua: tautan cepat -->
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#home" class="hover:text-yellow-300 transition-colors">Home</a></li>
+                        <li><a href="#products" class="hover:text-yellow-300 transition-colors">Produk</a></li>
+                        <li><a href="#promo" class="hover:text-yellow-300 transition-colors">Promo</a></li>
+                        <li><a href="#testimonials" class="hover:text-yellow-300 transition-colors">Testimoni</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-300 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pl-10"> <!-- Kolom ketiga: daftar produk (belum di tautkan ke halaman manapun) -->
+                    <h4 class="text-lg font-bold mb-4">Produk</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Es Krim</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Sorbet</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Ice Cream Cake</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Topping</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Merchandise</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pl-10"> <!-- Kolom keempat: layanan (belum ditautkan ke halaman manapun)-->
+                    <h4 class="text-lg font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Delivery</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Catering</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Acara Khusus</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Kartu Hadiah</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors">Program Reseller</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-pink-400 mt-8 pt-8 text-center"> <!-- Garis pemisah -->
+                <p>&copy; 2025 Crèamyo!. All Rights Reserved.</p>
+                <p class="mt-2 text-sm">Made with <i class="fas fa-heart text-red-400"></i> in Karawang</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (tombol ke atas yang berada di pojok kanan bawah)-->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-pink-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-pink-600 transition-colors hidden">
+        <i class="fas fa-arrow-up"></i> <!-- Import icon di font awesome -->
+    </button>
+
+    <!-- Add this before script.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script> <!--import js untuk keperluan animasi / transisi-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--import library untuk popup notif pakai sweetalert2-->
+    <script src="script.js"></script> <!--import script.js external untuk membuat kode transisi dan animasi-->
+</body>
+</html>
